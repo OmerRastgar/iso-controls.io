@@ -42,9 +42,17 @@ document.getElementById('mapButton').addEventListener('click', function() {
             tableBodyRows.forEach(row => {
                 const columns = row.split(',');
                 let rowHtml = '<tr>';
+                
                 columns.forEach(column => {
-                    rowHtml += `<td>${column}</td>`;
+                    const trimmedColumn = column.trim();
+                    // Check if the column ends with '.html'
+                    if (trimmedColumn.endsWith('.html')) {
+                        rowHtml += `<td><a href="${trimmedColumn}">${trimmedColumn}</a></td>`;
+                    } else {
+                        rowHtml += `<td>${trimmedColumn}</td>`;
+                    }
                 });
+                
                 rowHtml += '</tr>';
                 tbody.innerHTML += rowHtml;
             });
