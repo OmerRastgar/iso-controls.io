@@ -52,7 +52,7 @@ document.getElementById('mapButton').addEventListener('click', function() {
                         rowHtml += `<td><a href="${trimmedColumn}">${displayText}</a></td>`;
                     } else {
                         // Replace underscores with spaces for non-link columns
-                        rowHtml += `<td>${trimmedColumn.replace}</td>`;
+                        rowHtml += `<td>${trimmedColumn}</td>`;
                     }
                 });
                 
