@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO Mapping Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="app">
+        <!-- Box for radio buttons, dropdown, and map button -->
+        <div class="controls-box">
+            <div class="dropdown-box">
+                <select id="versionSelect">
+                    <option value="2013">27001:2013</option>
+                    <option value="2022">27001:2022</option>
+                </select>
+            </div>
+    
+            <div class="radio-box">
+                <label><input type="radio" name="tableType" value="control"> Control</label>
+                <label><input type="radio" name="tableType" value="policy"> Policy</label>
+                <label><input type="radio" name="tableType" value="procedure"> Procedure</label>
+                <label><input type="radio" name="tableType" value="review"> Review</label>
+            </div>
+    
+            <button id="mapButton">Map</button>
+        </div>
+    
+        <input type="search" id="searchInput" placeholder="Search...">
+    
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Control</th>
+                    <th>EXT</th>
+                    <th>Policy</th>
+                    <th>Implementation</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
