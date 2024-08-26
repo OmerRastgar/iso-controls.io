@@ -4,8 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information Security</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 10%;
+            padding: 20px;
+            border-right: 1px solid #3f51b5;
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.7);
+        }
+        .sidebar h2 {
+            color: #ffffff;
+        }
+        .sidebar a {
+            color: #3f51b5;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+        .sidebar a:hover {
+            color: #303f9f;
+            text-decoration: underline;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .main-content h1, .main-content h2, .main-content h3 {
+            color: #ffffff;
+        }
+        .main-content a {
+            color: #3f51b5;
+            text-decoration: none;
+        }
+        .main-content a:hover {
+            color: #303f9f;
+            text-decoration: underline;
+        }
+        .post {
+            margin-bottom: 20px;
+        }
+        .post-title {
+            border-bottom: 1px solid #3f51b5;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .post-content {
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <h1>Information Security</h1>
+    <div class="sidebar">
+        <h2>Table of Contents</h2>
+        <a href="#post1">Post Title 1</a>
+        <a href="#post2">Post Title 2</a>
+        <a href="#post3">Post Title 2</a>
+        <!-- Add more links as needed -->
+    </div>
+    <div class="main-content">
+        <h1>Information Security</h1>
+        <div class="post" id="post1">
+            <h2 class="post-title">How to create Information Security Policy</h2>
+            <div class="post-content">
+                <p>This is the content of the first post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan tortor.</p>
+            </div>
+        </div>
+        <div class="post" id="post2">
+            <h2 class="post-title">How to Implement Information Security Policy</h2>
+            <div class="post-content">
+                <p>This is the content of the second post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan tortor.</p>
+            </div>
+        </div>
+        <div class="post" id="post3">
+            <h2 class="post-title">Review Process for information Security Policy</h2>
+            <div class="post-content">
+                <p>This is the content of the second post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan tortor.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
