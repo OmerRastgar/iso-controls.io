@@ -76,6 +76,17 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: #1e1e1e;
+
+}
+
+table a {
+    color: #3f51b5; /* Change this to your desired color */
+    text-decoration: none; /* Optional: Remove underline from links */
+}
+
+table a:hover {
+    color: #303f9f; /* Change this to your desired hover color */
+    text-decoration: underline; /* Optional: Add underline on hover */
 }
 
 table th, table td {
