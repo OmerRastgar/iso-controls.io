@@ -1,59 +1,55 @@
-document.getElementById('mapButton').addEventListener('click', loadCSV);
-
-function loadCSV() {
+document.getElementById('mapButton').addEventListener('click', function() {
     const version = document.getElementById('versionSelect').value;
-    const tableType = document.querySelector('input[name="tableType"]:checked')?.value;
-
-    let fileName = '';
+    const tableType = document.querySelector('input[name="tableType"]:checked').value;
     
-    if (tableType === 'control' && version === '2022') {
-        fileName = 'control2022.csv';
-    } else if (tableType === 'control' && version === '2013') {
-        fileName = 'control2013.csv';
-    } else if (tableType === 'policy' && version === '2022') {
-        fileName = 'policy2022.csv';
-    } else if (tableType === 'policy' && version === '2013') {
-        fileName = 'policy2013.csv';
-    } else if (tableType === 'procedure' && version === '2022') {
-        fileName = 'procedure2022.csv';
-    } else if (tableType === 'procedure' && version === '2013') {
-        fileName = 'procedure2013.csv';
-    } else if (tableType === 'review' && version === '2022') {
-        fileName = 'review2022.csv';
-    } else if (tableType === 'review' && version === '2013') {
-        fileName = 'review2013.csv';
+    let csvFile = '';
+    if (version === '2022' && tableType === 'control') {
+        csvFile = 'control2022.csv';
+    } else if (version === '2013' && tableType === 'control') {
+        csvFile = 'control2013.csv';
+    } else if (version === '2022' && tableType === 'policy') {
+        csvFile = 'policy2022.csv';
+    } else if (version === '2013' && tableType === 'policy') {
+        csvFile = 'policy2013.csv';
     }
+    // Add logic for other radio buttons similarly...
 
-    if (fileName) {
-        fetch(fileName)
-            .then(response => response.text())
-            .then(data => {
-                parseCSV(data);
-            })
-            .catch(error => {
-                console.error("Error fetching file:", error);
+    // Fetch the CSV file and load data
+    fetch(csvFile)
+        .then(response => response.text())
+        .then(csvText => {
+            const rows = csvText.split('\n');
+            const tableHeaders = rows[0].split(','); // First row as headers
+            const tableBodyRows = rows.slice(1);     // Rest of the rows as data
+
+            const table = document.getElementById('dataTable');
+            const thead = table.querySelector('thead');
+            const tbody = table.querySelector('tbody');
+
+            // Clear previous table data
+            thead.innerHTML = '';
+            tbody.innerHTML = '';
+
+            // Dynamically create table headers
+            let headerRow = '<tr>';
+            tableHeaders.forEach(header => {
+                headerRow += `<th>${header}</th>`;
             });
-    } else {
-        alert("Please select both a radio button and a version.");
-    }
-}
+            headerRow += '</tr>';
+            thead.innerHTML = headerRow;
 
-function parseCSV(data) {
-    const rows = data.split('\n');
-    const tableData = rows.map(row => row.split(','));
-
-    const tbody = document.querySelector('#dataTable tbody');
-    tbody.innerHTML = '';  // Clear the previous data
-
-    tableData.forEach(row => {
-        const tr = document.createElement('tr');
-        
-        row.forEach(cell => {
-            const td = document.createElement('td');
-            td.textContent = cell.trim();
-            tr.appendChild(td);
+            // Dynamically populate table body
+            tableBodyRows.forEach(row => {
+                const columns = row.split(',');
+                let rowHtml = '<tr>';
+                columns.forEach(column => {
+                    rowHtml += `<td>${column}</td>`;
+                });
+                rowHtml += '</tr>';
+                tbody.innerHTML += rowHtml;
+            });
+        })
+        .catch(error => {
+            console.error('Error loading CSV:', error);
         });
-
-        tbody.appendChild(tr);
-    });
-}
+});
