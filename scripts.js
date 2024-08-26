@@ -47,9 +47,12 @@ document.getElementById('mapButton').addEventListener('click', function() {
                     const trimmedColumn = column.trim();
                     // Check if the column ends with '.html'
                     if (trimmedColumn.endsWith('.html')) {
-                        rowHtml += `<td><a href="${trimmedColumn}">${trimmedColumn}</a></td>`;
+                        // Remove '.html' and replace underscores with spaces for display
+                        const displayText = trimmedColumn.replace('.html', '').replace(/_/g, ' ');
+                        rowHtml += `<td><a href="${trimmedColumn}">${displayText}</a></td>`;
                     } else {
-                        rowHtml += `<td>${trimmedColumn}</td>`;
+                        // Replace underscores with spaces for non-link columns
+                        rowHtml += `<td>${trimmedColumn.replace}</td>`;
                     }
                 });
                 

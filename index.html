@@ -10,26 +10,27 @@
 
     <div id="app">
         <!-- Box for radio buttons, dropdown, and map button -->
-        <div class="controls-box">
-            <div class="dropdown-box">
-                <select id="versionSelect">
-                    <option value="2013">27001:2013</option>
-                    <option value="2022">27001:2022</option>
-                </select>
+        <div class="container">
+            <div class="controls-box">
+                <div class="dropdown-box">
+                    <select id="versionSelect">
+                        <option value="2013">27001:2013</option>
+                        <option value="2022">27001:2022</option>
+                    </select>
+                </div>
+        
+                <div class="radio-box">
+                    <label><input type="radio" name="tableType" value="control"> Control</label>
+                    <label><input type="radio" name="tableType" value="policy"> Policy</label>
+                    <label><input type="radio" name="tableType" value="procedure"> Procedure</label>
+                    <label><input type="radio" name="tableType" value="review"> Review</label>
+                </div>
+        
+                <button id="mapButton">Map</button>
             </div>
-    
-            <div class="radio-box">
-                <label><input type="radio" name="tableType" value="control"> Control</label>
-                <label><input type="radio" name="tableType" value="policy"> Policy</label>
-                <label><input type="radio" name="tableType" value="procedure"> Procedure</label>
-                <label><input type="radio" name="tableType" value="review"> Review</label>
-            </div>
-    
-            <button id="mapButton">Map</button>
+        
+            <input type="search" id="searchInput" placeholder="Search...">
         </div>
-    
-        <input type="search" id="searchInput" placeholder="Search...">
-    
         <table id="dataTable">
             <thead>
                 <tr>
