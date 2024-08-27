@@ -1,15 +1,15 @@
-Review ,Control,EXT
-"Information Security 	",5.1.1,Policies for information security
-"Access Control 	",,
-" Data Classification and Handling 		",,
-"Incident Response 		",,
-"Physical Security 		",,
-"Network Security 		",,
-"Information Asset Management 		",,
-"Acceptable Use 		",,
-"Business Continuity and Disaster		",,
-"Recovery 		",,
-"Vendor Management 		",,
-"Security Awareness and Training 		",,
-"Mobile Device Security 		",,
-"		",,
+Review,Control,EXT
+Information_Security.html,5.1.1,Policies for information security
+Access_Control.html,,
+Data_Classification_and_Handling.html,,
+Incident_Response.html,,
+Physical_Security.html,,
+Network_Security.html,,
+Information_Asset_Management.html,,
+Acceptable_Use.html,,
+Business_Continuity_and_Disaster_Recovery.html,,
+Recovery_Policy.hml,,
+Vendor_Management.html,,
+Security_Awareness_and_Training.html,,
+Mobile_Device_Security.html,,
+
