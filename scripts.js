@@ -12,6 +12,18 @@ document.getElementById('mapButton').addEventListener('click', function() {
     } else if (version === '2013' && tableType === 'policy') {
         csvFile = 'policy2013.csv';
     }
+    else if (version === '2013' && tableType === 'review') {
+        csvFile = 'review2013.csv';
+    }
+    else if (version === '2022' && tableType === 'review') {
+        csvFile = 'review2022.csv';
+    }
+    else if (version === '2013' && tableType === 'procedure') {
+        csvFile = 'procedure2013.csv';
+    }
+    else if (version === '2022' && tableType === 'procedure') {
+        csvFile = 'procedure2022.csv';
+    }
     // Add logic for other radio buttons similarly...
 
     // Fetch the CSV file and load data
