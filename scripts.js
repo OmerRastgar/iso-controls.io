@@ -13,16 +13,16 @@ document.getElementById('mapButton').addEventListener('click', function() {
         csvFile = 'policy2013.csv';
     }
     else if (version === '2013' && tableType === 'review') {
-        csvFile = 'review2013.csv';
+        csvFile = 'Review2013.csv';
     }
     else if (version === '2022' && tableType === 'review') {
-        csvFile = 'review2022.csv';
+        csvFile = 'Review2022.csv';
     }
     else if (version === '2013' && tableType === 'procedure') {
-        csvFile = 'procedure2013.csv';
+        csvFile = 'Procedure2013.csv';
     }
     else if (version === '2022' && tableType === 'procedure') {
-        csvFile = 'procedure2022.csv';
+        csvFile = 'Procedure2022.csv';
     }
     // Add logic for other radio buttons similarly...
 
